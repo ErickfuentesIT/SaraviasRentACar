@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.saraviasrent.www.entities.Propietarios" table="propietarios" schema="saravias_rentacar">
+        <id name="propietarioId">
+            <column name="propietario_id" sql-type="varchar(6)" length="6"/>
+        </id>
+        <property name="usuarioPropietario">
+            <column name="usuario_propietario" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="fotoProp">
+            <column name="foto_prop" sql-type="text"/>
+        </property>
+        <property name="nombresProp">
+            <column name="nombres_prop" sql-type="varchar(255)"/>
+        </property>
+        <property name="apellidosProp">
+            <column name="apellidos_prop" sql-type="varchar(255)"/>
+        </property>
+        <property name="telefonoProp">
+            <column name="telefono_prop" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="duiProp">
+            <column name="dui_prop" sql-type="varchar(11)" length="11"/>
+        </property>
+        <property name="direccionProp">
+            <column name="direccion_prop" sql-type="text"/>
+        </property>
+        <property name="fechaCreacionProp">
+            <column name="fecha_creacion_prop" sql-type="timestamp"/>
+        </property>
+        <property name="gestorId">
+            <column name="gestor_id" sql-type="varchar(6)" length="6"/>
+        </property>
+        <property name="estadoProp">
+            <column name="estado_prop" sql-type="enum('activo', 'inactivo', 'sin aprobacion')"/>
+        </property>
+        <many-to-one name="usuariosByUsuarioPropietario" class="sv.saraviasrent.www.entities.Usuarios">
+            <column name="usuario_propietario"/>
+        </many-to-one>
+        <set name="mensajesByPropietarioId" inverse="true">
+            <key>
+                <column name="emisor_mensaje"/>
+            </key>
+            <one-to-many not-found="ignore" class="sv.saraviasrent.www.entities.Mensajes"/>
+        </set>
+        <set name="vehiculosByPropietarioId" inverse="true">
+            <key>
+                <column name="propietario_vehiculo"/>
+            </key>
+            <one-to-many not-found="ignore" class="sv.saraviasrent.www.entities.Vehiculos"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/saravias_rentacar</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <mapping resource="Administradores.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Administradores"/>
+        <mapping resource="Arquileres.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Arquileres"/>
+        <mapping class="sv.saraviasrent.www.entities.Clientes"/>
+        <mapping resource="Clientes.hbm.xml"/>
+        <mapping resource="Conversaciones.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Conversaciones"/>
+        <mapping resource="Empleados.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Empleados"/>
+        <mapping resource="ImgVehiculos.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.ImgVehiculos"/>
+        <mapping resource="Mensajes.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Mensajes"/>
+        <mapping class="sv.saraviasrent.www.entities.Propietarios"/>
+        <mapping resource="Propietarios.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Roles"/>
+        <mapping resource="Roles.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Usuarios"/>
+        <mapping resource="Usuarios.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Vehiculos"/>
+        <mapping resource="Vehiculos.hbm.xml"/>
+        <mapping class="sv.saraviasrent.www.entities.Ventas"/>
+        <mapping resource="Ventas.hbm.xml"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

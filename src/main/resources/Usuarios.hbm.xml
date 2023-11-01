@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.saraviasrent.www.entities.Usuarios" table="usuarios" schema="saravias_rentacar">
+        <id name="usuarioId">
+            <column name="usuario_id" sql-type="varchar(5)" length="5"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="correoUser">
+            <column name="correo_user" sql-type="varchar(255)"/>
+        </property>
+        <property name="contrasenaUser">
+            <column name="contrasena_user" sql-type="varchar(255)"/>
+        </property>
+        <property name="rolId">
+            <column name="rol_id" sql-type="varchar(5)" length="5"/>
+        </property>
+        <property name="estadoUser">
+            <column name="estado_user" sql-type="enum('activo', 'inactivo')"/>
+        </property>
+    </class>
+</hibernate-mapping>

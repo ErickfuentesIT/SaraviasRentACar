@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sv.saraviasrent.www.entities.Ventas" table="ventas" schema="saravias_rentacar">
+        <id name="ventaId">
+            <column name="venta_id" sql-type="varchar(10)" length="10"/>
+        </id>
+        <property name="vehiculoId">
+            <column name="vehiculo_id" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="tituloVenta">
+            <column name="titulo_venta" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="descripcionVenta">
+            <column name="descripcion_venta" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="precioVenta">
+            <column name="precio_venta" sql-type="varchar(255)"/>
+        </property>
+        <property name="estadoVenta">
+            <column name="estado_venta" sql-type="enum('disponible', 'no disponible', 'vendido', '')"/>
+        </property>
+        <property name="gestorId">
+            <column name="gestor_id" sql-type="varchar(6)" length="6"/>
+        </property>
+    </class>
+</hibernate-mapping>
